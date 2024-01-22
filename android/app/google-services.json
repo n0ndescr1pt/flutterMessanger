@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "931483243324",
+    "project_id": "mymessanger-bd45a",
+    "storage_bucket": "mymessanger-bd45a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:931483243324:android:16e243dd611a3d75a64439",
+        "android_client_info": {
+          "package_name": "com.example.flutter_messnger"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQuJQl0GF5OHUjykS3UC9TbK22HA_cvTg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
