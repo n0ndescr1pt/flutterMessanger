@@ -2,15 +2,18 @@
 
 A new Flutter project.
 
-## Getting Started
+## Versions
 
-This project is a starting point for a Flutter application.
+![Code_h2qyUm3ZG2](https://github.com/n0ndescr1pt/flutterMessanger/assets/112966572/87af679c-335b-43e3-a5f6-8b54a858448a)
 
-A few resources to get you started if this is your first Flutter project:
+# How it look
+<table >
+  <tr>
+    <td><img src="https://github.com/n0ndescr1pt/flutterMessanger/assets/112966572/78c4e2c7-d391-4e36-b9e5-76397f6444b1" /></td>
+    <td><img src="https://github.com/n0ndescr1pt/flutterMessanger/assets/112966572/39c959bb-e213-40fc-aed8-1050c4a31f98"/></td>
+    <td><img src="https://github.com/n0ndescr1pt/flutterMessanger/assets/112966572/9f6b6f23-f185-41bb-b957-5415032e21d1"/></td>
+     <td><img src="https://github.com/n0ndescr1pt/flutterMessanger/assets/112966572/38a4f208-9f90-46a2-b839-f21c9b700bc3"/></td>
+  </tr>
+</table>
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
