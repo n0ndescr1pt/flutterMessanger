@@ -19,6 +19,7 @@ class ChatPage extends StatefulWidget {
 }
 
 class _ChatPageState extends State<ChatPage> {
+  final ScrollController _controller = ScrollController();
   final TextEditingController _messageController = TextEditingController();
   final ChatService _chatService = ChatService();
   final FirebaseAuth _fireBaseAuth = FirebaseAuth.instance;
@@ -29,6 +30,7 @@ class _ChatPageState extends State<ChatPage> {
       await _chatService.sendMessage(
           widget.recieverUserID, _messageController.text);
       _messageController.clear();
+      _controller.animateTo(_controller.position.maxScrollExtent, duration: const Duration(milliseconds: 50), curve: Curves.easeOut,);
     }
   }
 
@@ -44,7 +46,6 @@ class _ChatPageState extends State<ChatPage> {
             child: _buildMessageList(),
           ),
           _buildMessageInput(),
-
           const SizedBox(height: 25)
         ],
       ),
@@ -65,19 +66,19 @@ class _ChatPageState extends State<ChatPage> {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Text('Loading..');
         }
-
+       
         return ListView(
+          controller: _controller,
           children: snapshot.data!.docs
-              .map((document) => __buildMessageItem(document))
+              .map((document) => _buildMessageItem(document))
               .toList(),
         );
-
       },
     );
   }
 
   //build message item
-  Widget __buildMessageItem(DocumentSnapshot document) {
+  Widget _buildMessageItem(DocumentSnapshot document) {
     Map<String, dynamic> data = document.data() as Map<String, dynamic>;
 
     var alignment = (data['senderId'] == _fireBaseAuth.currentUser!.uid)
