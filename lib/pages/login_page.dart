@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
                   obscureText: false,
                 ),
 
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
 
                 //PasswordTextField
                 MyTextField(
@@ -79,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
                   obscureText: true,
                 ),
 
-                const SizedBox(height: 30),
+                const SizedBox(height: 10),
 
                 //Button
                 MyButton(onTap: signIn, text: "Log in"),

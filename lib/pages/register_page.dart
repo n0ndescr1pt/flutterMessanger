@@ -80,7 +80,7 @@ class _MyRegisterPageState extends State<MyRegisterPage> {
                   obscureText: false,
                 ),
 
-                const SizedBox(height: 20),
+                const SizedBox(height: 10),
 
                 //PasswordTextField
                 MyTextField(
@@ -89,7 +89,7 @@ class _MyRegisterPageState extends State<MyRegisterPage> {
                   obscureText: true,
                 ),
 
-                const SizedBox(height: 30),
+                const SizedBox(height: 10),
 
                 //ConfirmPasswordTextField
                 MyTextField(
@@ -98,7 +98,7 @@ class _MyRegisterPageState extends State<MyRegisterPage> {
                   obscureText: true,
                 ),
 
-                const SizedBox(height: 30),
+                const SizedBox(height: 10),
 
                 //Button
                 MyButton(onTap: signUp, text: "Sign Up"),
