@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_messnger/components/my_button.dart';
 import 'package:flutter_messnger/components/my_text_field.dart';
+import 'package:flutter_messnger/services/auth/auth_service.dart';
+import 'package:provider/provider.dart';
 
 class MyRegisterPage extends StatefulWidget {
   final void Function()? onTap;
@@ -15,8 +17,31 @@ class _MyRegisterPageState extends State<MyRegisterPage> {
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
 
-  void signUp(){
+  void signUp() async {
+    if (passwordController.text != confirmPasswordController.text) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Пароли не совпадают"),
+        ),
+      );
+      return;
+    }
 
+    //get auth services
+    final authService = Provider.of<AuthService>(context, listen: false);
+
+    try {
+      await authService.signUpWithEmailAndPassword(
+        emailController.text,
+        passwordController.text,
+      );
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(e.toString()),
+        ),
+      );
+    }
   }
 
   @override
@@ -85,16 +110,18 @@ class _MyRegisterPageState extends State<MyRegisterPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     const Text("Already a member?"),
-                    const SizedBox(width: 4,),
+                    const SizedBox(
+                      width: 4,
+                    ),
                     GestureDetector(
                       onTap: widget.onTap,
-                      child: const Text("Login now", style: TextStyle(fontWeight: FontWeight.bold),
+                      child: const Text(
+                        "Login now",
+                        style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     )
                   ],
                 )
-
-
               ],
             ),
           ),
